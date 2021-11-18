@@ -22,7 +22,7 @@ following command to play the game:
 ```
 python3 main.py 
 ```
-### c.The GUI.
+### c. The GUI.
 When the code is executed, this pygame window will appear.
 ![gui](https://user-images.githubusercontent.com/39918471/142399483-127d3cfa-1553-417e-9515-072e5178189e.png)
 
