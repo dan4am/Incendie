@@ -65,5 +65,6 @@ Vitesse = 0.1   (The speed of the fire which has a float value)
 Probabilité = 0.53 (The probability of a cell burning which has a float value)
 ```
 
-Those values can be changed provided they resped the right type (float or int)
-the order of the values must not be changed, otherwise the simulation will work in an unpredictable manner.
+Those values can be changed provided they are the right type (float or int).
+
+The order of the values must not be changed, otherwise the simulation will work in an unpredictable manner.
