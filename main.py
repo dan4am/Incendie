@@ -26,7 +26,7 @@ general_probability = 0.53
 h = 100
 l = 100
 size = min([math.ceil(screen_size[0] / l), math.ceil(screen_size[1] / h)])
-# burned_cells = 0
+burned_cells = 0
 
 
 
@@ -212,20 +212,16 @@ def next_step():
 def  start_fire():
     i = 0
     number_burning_cells = next_step()
-    ashes = 0
     while (number_burning_cells > 0):
         time.sleep(speed)
         number_burning_cells = next_step()
-    for line in FORREST:
-        for cell in line:
-            if (cell.value == ASHES):
-                ashes += 1
-    print("number of burned cells = " + str(ashes))
-    print(str((ashes/ (l * h)) * 100 ) +"% of the forrest has burned.")
+    print("number of burned cells version 1 = " + str(burned_cells))
+    print(str((burned_cells/ (l * h)) * 100 ) +"% of the forrest has burned.")
 
 
 
 def main():
+    global burned_cells
     init_forest(h,l)
     screen = pygame.display.set_mode(screen_size)
     screen.fill(WHITE)
@@ -242,11 +238,14 @@ def main():
             elif pygame.mouse.get_pressed()[0]:
                     x,y = pygame.mouse.get_pos()
                     x1,y1 = from_coordinate_to_cell(x,y)
-                    FORREST[y1][x1].value = FIRE
+                    if (FORREST[y1][x1].value != FIRE):
+                        FORREST[y1][x1].burn()
             elif pygame.mouse.get_pressed()[2]:
                     x, y = pygame.mouse.get_pos()
                     x1, y1 = from_coordinate_to_cell(x, y)
-                    FORREST[y1][x1].value = ASHES
+                    if (FORREST[y1][x1].value != ASHES):
+                        FORREST[y1][x1].value = ASHES
+                        burned_cells += 1
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     t1 = threading.Thread(target=lambda: start_fire())
