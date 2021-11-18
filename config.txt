@@ -1,4 +1,4 @@
-Hauteur = 50
-Largeur = 50
+Hauteur = 100
+Largeur = 100
 Vitesse = 0.1
-Probabilité = 0.54
+Probabilité = 0.53

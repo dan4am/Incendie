@@ -243,6 +243,10 @@ def main():
                     x,y = pygame.mouse.get_pos()
                     x1,y1 = from_coordinate_to_cell(x,y)
                     FORREST[y1][x1].value = FIRE
+            elif pygame.mouse.get_pressed()[2]:
+                    x, y = pygame.mouse.get_pos()
+                    x1, y1 = from_coordinate_to_cell(x, y)
+                    FORREST[y1][x1].value = ASHES
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     t1 = threading.Thread(target=lambda: start_fire())
