@@ -49,6 +49,7 @@ class Case:
         self.modified = 0
     def __repr__(self):
         return (str ((self.x, self.y)))
+
     def burn(self):
         if self.value == FRESH:
             self.value = FIRE
@@ -98,6 +99,8 @@ def draw_forrest( screen):
         for j in range (len (FORREST[0])):
             FORREST[i][j].draw(screen)
     pygame.display.flip()
+
+
 
 def init_forest(hauteur,largeur):
     global FORREST, h, l, size, speed,general_probability,burned_cells, padding_x, padding_y, zoom_out,zoom_in
@@ -158,13 +161,13 @@ def next_step():
     # print(list_burning_cells)
 
     for cell in list_burning_cells:
-                if cell.x == 0:
-                    if cell.y == 0:
+                if cell.x == 0:  # Cell is on the far left of the grid
+                    if cell.y == 0: # Cell is on the top of the grid
 
                             FORREST[cell.x+1][cell.y].burn_by_probability(general_probability)
 
                             FORREST[cell.x][cell.y+1].burn_by_probability(general_probability)
-                    elif cell.y == l-1:
+                    elif cell.y == l-1: # Cell is on the bottom of the grid
 
                             FORREST[cell.x + 1][cell.y].burn_by_probability(general_probability)
 
@@ -176,7 +179,8 @@ def next_step():
                             FORREST[cell.x][cell.y + 1].burn_by_probability(general_probability)
 
                             FORREST[cell.x][cell.y - 1].burn_by_probability(general_probability)
-                elif cell.x == h-1:
+
+                elif cell.x == h-1: # cell is on the far right of the grid
                     if cell.y == 0:
 
                             FORREST[cell.x - 1][cell.y].burn_by_probability(general_probability)
@@ -221,7 +225,7 @@ def  start_fire():
 
 
 def main():
-    global burned_cells
+    global burned_cells, speed
     init_forest(h,l)
     screen = pygame.display.set_mode(screen_size)
     screen.fill(WHITE)
@@ -248,13 +252,28 @@ def main():
                         burned_cells += 1
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    t1 = threading.Thread(target=lambda: start_fire())
-                    # list_threads.append(t1)
-                    t1.daemon = True
-                    t1.start()
+                    if len (threading.enumerate()) <= 1:
+                        t1 = threading.Thread(target=lambda: start_fire())
+                        # list_threads.append(t1)
+                        t1.daemon = True
+                        t1.start()
 
                 elif event.key == pygame.K_r:
                     init_forest(h, l)
+
+                elif event.key == pygame.K_UP:
+                    if (speed > 0.11):
+                        speed -= 0.025
+                    else:
+                        speed = 0.02
+                    # print (speed)
+
+                elif event.key == pygame.K_DOWN:
+                    if (speed < 0.5):
+                        speed += 0.025
+                    else:
+                        speed= 0.5
+                    # print(speed)
 
         clock.tick(60)
 
