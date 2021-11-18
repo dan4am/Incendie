@@ -49,7 +49,7 @@ You can also select the cells you wish not to ignite by right-clicking on them.
 `DOWN` → Decrease the speed of the fire
 
 
-### d. Commands.
+### e. Config file.
 The config.txt file contains the default settings of the simulations.
 The settings are the folowing:
 ```
