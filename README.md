@@ -11,6 +11,7 @@ This repository contains the code for Incendiary: a simulation of a wild fire.
 ## 1. Getting started 
 ### a. Prerequesites.
 - [python 3.9](https://www.python.org/downloads/)
+- [pygame 2.0.1](https://www.pygame.org/wiki/GettingStarted)
 
 ### b. Run the code.
 After downloading and installing python and the necessary libraries, the user have to run the 
