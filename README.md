@@ -1,12 +1,12 @@
 # Description.
 This repository contains the code for Incendiary: a simulation of a wild fire.
 ## Structure:
-- [Getting started.](https://github.com/dan4am/urubugu/blob/master/README.md#1-getting-started)
-   - [Prerequisites.](https://github.com/dan4am/urubugu/blob/master/README.md#a-prerequesites)
-   - [Run the code.](https://github.com/dan4am/urubugu/blob/master/README.md#b-run-the-code)
+- [Getting started.](https://github.com/dan4am/Incendie/blob/main/README.md#1-getting-started)
+      - [Prerequisites.](https://github.com/dan4am/Incendie/blob/main/README.md#a-prerequesitess)
+   - [Run the code.](https://github.com/dan4am/Incendie/blob/main/README.md#b-run-the-code)
    - [The GUI.](https://github.com/dan4am/urubugu/blob/master/README.md#cthe-gui)
-   - [Commands.](https://github.com/dan4am/urubugu/blob/master/README.md#d-commands)
-   - [Config file.](https://github.com/dan4am/urubugu/blob/master/README.md#d-commands)
+   - [Commands.](https://github.com/dan4am/Incendie/blob/main/README.md#d-commands)
+   - [Config file.](https://github.com/dan4am/Incendie/blob/main/README.md#e-config-file)
    
 ## 1. Getting started 
 ### a. Prerequesites.
