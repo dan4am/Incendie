@@ -2,7 +2,7 @@
 This repository contains the code for Incendiary: a simulation of a wild fire.
 ## Structure:
 - [Getting started.](https://github.com/dan4am/Incendie/blob/main/README.md#1-getting-started)
-      - [Prerequisites.](https://github.com/dan4am/Incendie/blob/main/README.md#a-prerequesitess)
+   - [Prerequisites.](https://github.com/dan4am/Incendie/blob/main/README.md#a-prerequesitess)
    - [Run the code.](https://github.com/dan4am/Incendie/blob/main/README.md#b-run-the-code)
    - [The GUI.](https://github.com/dan4am/urubugu/blob/master/README.md#cthe-gui)
    - [Commands.](https://github.com/dan4am/Incendie/blob/main/README.md#d-commands)
