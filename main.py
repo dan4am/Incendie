@@ -127,6 +127,7 @@ def init_forest(hauteur,largeur):
                 case = Case(FRESH, x, y, 0)
             FORREST[-1].append(case)
     pygame.init()
+    pygame.display.set_caption("Incendiary")
     # size_screen = (900, 900)
 
     size = min([int(screen_size[0] / l), int(screen_size[1] / h)])
